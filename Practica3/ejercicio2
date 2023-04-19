@@ -1,0 +1,9 @@
+% Construya una funcion que se llame sub_conjunto. Esta funcion recibe
+% dos listas y debe retornar True cuando el primer argumento es
+% subconjunto completo del segundo y #f en caso contrario.
+
+sub_conjunto([],_).
+sub_conjunto([Xs|Xss],Y):-
+        member(Xs,Y),
+        select(Xs,Y,Z),
+        sub_conjunto(Xss,Z).
